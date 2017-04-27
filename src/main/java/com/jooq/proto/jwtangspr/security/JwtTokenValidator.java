@@ -7,11 +7,6 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import org.springframework.stereotype.Component;
 
-/**
- * Class validates a given token by using the secret configured in the application
- *
- * @author pascal alma
- */
 @Component
 public class JwtTokenValidator {
 

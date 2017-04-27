@@ -15,11 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Filter that orchestrates authentication by using supplied JWT token
- *
- * @author pascal alma
- */
 public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessingFilter {
 
 

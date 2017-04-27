@@ -4,13 +4,6 @@ package com.jooq.proto.jwtangspr.security.model;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 
-/**
- * Holder for JWT token from the request.
- * <p/>
- * Other fields aren't used but necessary to comply to the contracts of AbstractUserDetailsAuthenticationProvider
- *
- * @author pascal alma
- */
 public class JwtAuthenticationToken extends UsernamePasswordAuthenticationToken {
 
 

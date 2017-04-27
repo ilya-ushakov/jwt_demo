@@ -63,33 +63,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // disable page caching
         httpSecurity.headers().cacheControl();
     }
-
-
-
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http
-//            .authorizeRequests()
-//                .antMatchers("/", "/user/login").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//            .formLogin()
-//                .loginPage("/user/login")
-//                .permitAll()
-//                .and()
-//            .logout()
-//                .permitAll();
-//    }
-
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth
-//            .inMemoryAuthentication()
-//                .withUser("tom").password("passw0rd").roles("user");
-//
-//        auth.inMemoryAuthentication().withUser("sally").password("passw0rd").roles("user", "admin");
-//
-//        auth.inMemoryAuthentication().withUser("marchin").password("passw0rd").roles("user", "foo");
-//    }
 }

@@ -6,10 +6,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-/**
- * Holds the info for a authenticated user (Principal)
- * @author pascal alma
- */
 public class AuthenticatedUser implements UserDetails {
 
     private final Long id;

@@ -1,10 +1,5 @@
 package com.jooq.proto.jwtangspr.security.transfer;
 
-/**
- * Simple placeholder for info extracted from the JWT
- *
- * @author pascal alma
- */
 public class JwtUserDto {
 
     private Long id;

@@ -16,11 +16,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * Used for checking the token from the request and supply the UserDetails if the token is valid
- *
- * @author pascal alma
- */
 @Component
 public class JwtAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
 
