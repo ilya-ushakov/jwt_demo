@@ -17,6 +17,7 @@ public class UserController {
     public UserController() {
         getUserDb().put("tom", Arrays.asList("user"));
         getUserDb().put("sally", Arrays.asList("user", "admin"));
+        getUserDb().put("marchin", Arrays.asList("user", "foo"));
     }
 
     @RequestMapping(value = "login", method = RequestMethod.POST)

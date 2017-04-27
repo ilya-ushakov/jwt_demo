@@ -34,6 +34,10 @@ appModule.controller('MainCtrl', ['mainService','$scope','$http',
                 $http.defaults.headers.common.Authorization = '';
             }
 
+            $scope.toLoginPage = function() {
+                $location.path("/login");
+            }
+
             $scope.loggedIn = function() {
                 return $scope.token !== null;
             }
