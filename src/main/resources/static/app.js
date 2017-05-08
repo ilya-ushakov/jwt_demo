@@ -34,6 +34,7 @@ appModule.controller('MainCtrl', ['mainService','$scope','$http',
                 mainService.hasRole(role).then(function(user) {
                 	if (user)
                 		$scope.roles.push(role);
+                	
                 	console.log($scope.roles)
                 });
             }
