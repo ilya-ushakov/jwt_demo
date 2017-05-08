@@ -8,6 +8,7 @@ appModule.controller('MainCtrl', ['mainService','$scope','$http',
             $scope.roleUser = false;
             $scope.roleAdmin = false;
             $scope.roleFoo = false;
+            $scope.roles = [];
 
             $scope.login = function() {
                 $scope.error = null;
@@ -28,6 +29,15 @@ appModule.controller('MainCtrl', ['mainService','$scope','$http',
                 mainService.hasRole('foo').then(function(foo) {$scope.roleFoo = foo});
             }
 
+            $scope.checkExactRoles = function() {
+            	var role = $("#roleName").val();
+                mainService.hasRole(role).then(function(user) {
+                	if (user)
+                		$scope.roles.push(role);
+                	console.log($scope.roles)
+                });
+            }
+            
             $scope.logout = function() {
                 $scope.userName = '';
                 $scope.token = null;
