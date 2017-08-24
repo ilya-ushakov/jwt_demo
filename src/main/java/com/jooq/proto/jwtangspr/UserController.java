@@ -16,6 +16,7 @@ public class UserController {
 
     public UserController() {
         getUserDb().put("tom", Arrays.asList("user"));
+        getUserDb().put("test", Arrays.asList("user"));
         getUserDb().put("sally", Arrays.asList("user", "admin"));
     }
 
@@ -24,10 +25,10 @@ public class UserController {
         throws ServletException {
 
         System.out.println(String.format("UserController login uri: %s", login));
-        if (login.name == null || !getUserDb().containsKey(login.name)) {
+        if (login.username == null || !getUserDb().containsKey(login.username)) {
             throw new ServletException("Invalid login");
         }
-        return new LoginResponse(JWTTokenGenerator.INSTANCE.generateToken(login.name));
+        return new LoginResponse(JWTTokenGenerator.INSTANCE.generateToken(login.username));
     }
 
     private Map<String, List<String>> getUserDb(){
@@ -38,13 +39,13 @@ public class UserController {
 
     @SuppressWarnings("unused")
     private static class UserLogin {
-        public String name;
+        public String username;
         public String password;
 
         @Override
         public String toString() {
             return "UserLogin{" +
-                    "name='" + name + '\'' +
+                    "name='" + username + '\'' +
                     ", password='" + password + '\'' +
                     '}';
         }
@@ -52,17 +53,25 @@ public class UserController {
 
     @SuppressWarnings("unused")
     private static class LoginResponse {
-        public String token;
+        public String accesstoken;
+        public String refreshtoken;
+        public String token_type;
+        public Integer expires_in;
+		public String scope;
 
         public LoginResponse(final String token) {
             System.out.println(String.format("LoginResponse token: %s", token));
-            this.token = token;
+            this.accesstoken = token;
+            this.refreshtoken= token;
+            this.token_type="bearer";
+            this.expires_in=2000;
+            this.scope="administration compliance search";
         }
 
         @Override
         public String toString() {
             return "LoginResponse{" +
-                    "token='" + token + '\'' +
+                    "token='" + accesstoken + '\'' +
                     '}';
         }
     }

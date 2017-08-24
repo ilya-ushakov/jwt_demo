@@ -4,6 +4,7 @@
     <groupId>com.jwt.spring</groupId>
     <artifactId>jwt-angular-spring</artifactId>
     <version>0.0.2-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <!--<parent>-->
         <!--<groupId>org.springframework.boot</groupId>-->
@@ -27,7 +28,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
-                <executions>
+                <executions> 
                     <execution>
                         <goals>
                             <goal>repackage</goal>
@@ -35,6 +36,12 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+			    <artifactId>maven-war-plugin</artifactId>
+			    <configuration>
+			        <failOnMissingWebXml>false</failOnMissingWebXml>
+			    </configuration>
+			</plugin>
         </plugins>
     </build>
 
@@ -44,6 +51,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>

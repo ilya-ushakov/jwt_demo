@@ -55,7 +55,7 @@ appModule.controller('MainCtrl', ['mainService','$scope','$http',
 appModule.service('mainService', function($http) {
     return {
         login : function(username) {
-            return $http.post('/user/login', {name: username}).then(function(response) {
+            return $http.post('/user/login', {username: username}).then(function(response) {
                 return response.data.token;
             });
         },
